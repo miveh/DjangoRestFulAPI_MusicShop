@@ -9,8 +9,8 @@ class Artist(models.Model):
 
 class Album(models.Model):
     title = models.CharField(max_length=160)
-    artist = models.ForeignKey(Artist, on_delete=models.PROTECT)
-
+    artist = models.ForeignKey(Artist, on_delete=models.PROTECT, blank=True, null=True)
+    image = models.ImageField(upload_to='album/', blank=True, null=True)
 
 class MediaType(models.Model):
     name = models.CharField(max_length=120)
